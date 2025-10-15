@@ -1,0 +1,12 @@
+# Python dependencies
+# Note: tkinter is usually included with Python, but on some systems
+# (especially Linux/WSL) you may need to install it separately:
+#
+# Ubuntu/Debian/WSL:
+#   sudo apt-get install python3-tk
+#
+# Fedora:
+#   sudo dnf install python3-tkinter
+#
+# macOS (with Homebrew):
+#   brew install python-tk
