@@ -148,9 +148,17 @@ class ScreensaverApp:
 
 def main():
     """Entry point for the application."""
-    root = tk.Tk()
-    app = ScreensaverApp(root)
-    app.run()
+    try:
+        root = tk.Tk()
+        root.update()  # Force initial rendering
+        app = ScreensaverApp(root)
+        app.run()
+    except KeyboardInterrupt:
+        print("\nScreensaver stopped by user.")
+    except Exception as e:
+        print(f"Error starting screensaver: {e}")
+        import traceback
+        traceback.print_exc()
 
 
 if __name__ == "__main__":
