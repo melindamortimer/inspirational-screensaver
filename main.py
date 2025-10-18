@@ -98,8 +98,25 @@ class ScreensaverApp:
         if not self.current_screensaver:
             return
 
+        # Get the position and size of the main window to determine which monitor it's on
+        main_x = self.root.winfo_x()
+        main_y = self.root.winfo_y()
+        main_width = self.root.winfo_width()
+        main_height = self.root.winfo_height()
+
+        # Calculate the center of the main window
+        center_x = main_x + main_width // 2
+        center_y = main_y + main_height // 2
+
         # Create fullscreen window
         self.fullscreen_window = tk.Toplevel(self.root)
+
+        # Position the window at the center of the main window's monitor before going fullscreen
+        # This ensures it goes fullscreen on the correct monitor
+        self.fullscreen_window.geometry(f"+{center_x}+{center_y}")
+        self.fullscreen_window.update_idletasks()
+
+        # Now set fullscreen - it will expand on the monitor where it's positioned
         self.fullscreen_window.attributes("-fullscreen", True)
         self.fullscreen_window.configure(bg="black")
 
