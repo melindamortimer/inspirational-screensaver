@@ -7,6 +7,7 @@ from tkinter import ttk
 from screensaver_base import ScreensaverRegistry
 # Import all screensaver implementations to register them
 import color_wheel_screensaver
+import inspirational_quotes_screensaver
 
 
 class ScreensaverApp:

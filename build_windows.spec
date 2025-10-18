@@ -11,10 +11,11 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('quotes.txt', '.')],  # Include quotes.txt in the build
     hiddenimports=[
         'screensaver_base',
         'color_wheel_screensaver',
+        'inspirational_quotes_screensaver',
     ],
     hookspath=[],
     hooksconfig={},
