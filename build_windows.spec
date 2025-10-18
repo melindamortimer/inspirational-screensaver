@@ -48,5 +48,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,  # Add path to .ico file if you have one, e.g., 'icon.ico'
+    icon='icons8-painting-64.png',  # PyInstaller will convert PNG to ICO automatically
 )

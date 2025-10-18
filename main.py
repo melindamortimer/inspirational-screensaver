@@ -127,6 +127,11 @@ class ScreensaverApp:
 
         self.fullscreen_window.bind("<Escape>", exit_fullscreen)
         self.fullscreen_window.bind("<Button-1>", exit_fullscreen)  # Click to exit
+        fullscreen_canvas.bind("<Escape>", exit_fullscreen)
+        fullscreen_canvas.bind("<Button-1>", exit_fullscreen)
+
+        # Set focus to the canvas so key events are captured
+        fullscreen_canvas.focus_set()
 
         # Show instruction label
         info_label = tk.Label(
