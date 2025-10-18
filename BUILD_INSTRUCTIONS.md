@@ -21,13 +21,15 @@ Run one of the following commands from the project root directory:
 
 **Option A: Using the spec file (recommended)**
 ```bash
-pyinstaller build_windows.spec
+python3 -m PyInstaller build_windows.spec
 ```
 
 **Option B: One-line command**
 ```bash
-pyinstaller --onefile --windowed --name ScreensaverApp --hidden-import screensaver_base --hidden-import color_wheel_screensaver main.py
+python3 -m PyInstaller --onefile --windowed --name ScreensaverApp --hidden-import screensaver_base --hidden-import color_wheel_screensaver --hidden-import inspirational_quotes_screensaver --add-data "quotes.txt:." main.py
 ```
+
+**Note:** If `pyinstaller` is in your PATH, you can use `pyinstaller` directly instead of `python3 -m PyInstaller`.
 
 ### Step 3: Find Your Executable
 
@@ -53,11 +55,11 @@ ScreensaverApp.exe
 
 ## Adding a Custom Icon
 
-1. Create or download a `.ico` file
+1. Create or download a `.ico` file (or convert the existing `icons8-painting-64.png`)
 2. Place it in the project root (e.g., `screensaver.ico`)
 3. Update the spec file or add to command:
    ```bash
-   pyinstaller --icon=screensaver.ico build_windows.spec
+   python3 -m PyInstaller --icon=screensaver.ico build_windows.spec
    ```
 
 ## Troubleshooting
@@ -82,7 +84,7 @@ Set `console=False` in the spec file (already configured).
 
 To do a completely fresh build:
 ```bash
-pyinstaller --clean build_windows.spec
+python3 -m PyInstaller --clean build_windows.spec
 ```
 
 ## Distribution

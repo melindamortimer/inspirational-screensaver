@@ -66,8 +66,8 @@ class ScreensaverBase(ABC):
         """Internal animation loop."""
         if self.is_running:
             self.render()
-            # Schedule next frame (approximately 15 FPS for efficiency)
-            self.animation_id = self.canvas.after(67, self._animate)
+            # Schedule next frame (approximately 40 FPS for balanced smooth animations)
+            self.animation_id = self.canvas.after(25, self._animate)
 
 
 class ScreensaverRegistry:
